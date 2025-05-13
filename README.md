@@ -1,4 +1,4 @@
-# kopf-smaple-metric-exporter
+# kopf-sample-metric-exporter
 
 Expose prometheus metrics within kopf operator.
 
