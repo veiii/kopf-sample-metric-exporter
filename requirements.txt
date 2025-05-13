@@ -1,0 +1,4 @@
+kopf
+pykube-ng
+pyyaml
+prometheus-client
