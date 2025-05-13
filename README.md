@@ -1,0 +1,1 @@
+# kopf-smaple-metric-exporter
