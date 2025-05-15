@@ -22,4 +22,15 @@ kubectl apply -f tests/crd.yaml
 kubectl apply -f tests/obj.yaml
 ```
 
-# Metric exposed at http://localhost:9090
+Metric exposed at http://localhost:9090
+
+# Tests
+
+## Test memory leak
+```bash
+python3 -m memory_profiler kopf run metric_exporter/metric_exporter.py  --verbose
+```
+## Make memory usage ploy
+```bash
+python hack/memory_usage_plot.py
+```

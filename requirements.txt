@@ -2,3 +2,5 @@ kopf
 pykube-ng
 pyyaml
 prometheus-client
+memory-profiler
+matplotlib

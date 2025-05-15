@@ -1,0 +1,1 @@
+kopf run metric_exporter/memory_leak.py --verbose
