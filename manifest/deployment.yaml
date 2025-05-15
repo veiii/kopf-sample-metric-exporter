@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kopf-memory-exporter
+  labels:
+    app: kopf-memory-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kopf-memory-exporter
+  template:
+    metadata:
+      labels:
+        app: "kopf-memory-exporter"
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9090"
+        prometheus.io/path: "/metrics"
+    spec:
+      serviceAccountName: kopf-memory-exporter
+      containers:
+        - name: kopf-memory-exporter
+          image: localhost:5000/kopf-memory-exporter:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            # Add environment variables here if needed
+            # - name: EXAMPLE_ENV
+            #   value: "value"
+          ports:
+            - containerPort: 9090
+              name: metrics
