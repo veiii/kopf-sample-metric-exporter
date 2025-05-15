@@ -1,0 +1,125 @@
+# A demo custom resource for the Kopf example operators.
+apiVersion: kopf.dev/v1
+kind: KopfExample
+metadata:
+  name: kopf-example-1
+  labels:
+    somelabel: somevalue
+  annotations:
+    someannotation: somevalue
+spec:
+  duration: 1m
+  field: value
+  items:
+  - item1
+  - item2
+---
+apiVersion: kopf.dev/v1
+kind: KopfExample
+metadata:
+  name: kopf-example-2
+spec:
+  duration: 1m
+  field: value
+  items:
+  - item1
+  - item2
+---
+apiVersion: kopf.dev/v1
+kind: KopfExample
+metadata:
+  name: kopf-example-3
+spec:
+  duration: 1m
+  field: value
+  items:
+  - item1
+  - item2
+---
+apiVersion: kopf.dev/v1
+kind: KopfExample
+metadata:
+  name: kopf-example-4
+spec:
+  duration: 1m
+  field: value
+  items:
+  - item1
+  - item2
+---
+apiVersion: kopf.dev/v1
+kind: KopfExample
+metadata:
+  name: kopf-example-5
+spec:
+  duration: 1m
+  field: value
+  items:
+  - item1
+  - item2
+---
+apiVersion: kopf.dev/v1
+kind: KopfExample
+metadata:
+  name: kopf-example-6
+spec:
+  duration: 1m
+  field: value
+  items:
+  - item1
+  - item2
+---
+apiVersion: kopf.dev/v1
+kind: KopfExample
+metadata:
+  name: kopf-example-7
+spec:
+  duration: 1m
+  field: value
+  items:
+  - item1
+  - item2
+---
+apiVersion: kopf.dev/v1
+kind: KopfExample
+metadata:
+  name: kopf-example-8
+spec:
+  duration: 1m
+  field: value
+  items:
+  - item1
+  - item2
+---
+apiVersion: kopf.dev/v1
+kind: KopfExample
+metadata:
+  name: kopf-example-9
+spec:
+  duration: 1m
+  field: value
+  items:
+  - item1
+  - item2
+---
+apiVersion: kopf.dev/v1
+kind: KopfExample
+metadata:
+  name: kopf-example-10
+spec:
+  duration: 1m
+  field: value
+  items:
+  - item1
+  - item2
+---
+apiVersion: kopf.dev/v1
+kind: KopfExample
+metadata:
+  name: kopf-example-11
+spec:
+  duration: 1m
+  field: value
+  items:
+  - item1
+  - item2

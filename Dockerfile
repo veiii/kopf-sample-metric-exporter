@@ -3,10 +3,10 @@ FROM python:3.11-slim AS builder
 
 WORKDIR /app
 
-COPY requirements.txt ./
-RUN pip install --user --no-cache-dir -r requirements.txt
+# Install build dependencies
+RUN pip install --user --no-cache-dir kopf pykube-ng pyyaml prometheus-client
 
-COPY . /app
+COPY metric_exporter /app/
 
 # Final minimal image
 FROM python:3.11-alpine
@@ -30,4 +30,4 @@ USER kopfuser
 
 EXPOSE 9090
 
-CMD ["sh", "-c", "kopf run memory_exporter.py ${KOPF_ARGS} --verbose"]
+CMD ["sh", "-c", "kopf run metric_exporter.py ${KOPF_ARGS} --verbose"]

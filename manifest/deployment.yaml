@@ -21,7 +21,7 @@ spec:
       serviceAccountName: kopf-memory-exporter
       containers:
         - name: kopf-memory-exporter
-          image: localhost:5000/kopf-memory-exporter:latest
+          image: kopf-memory-exporter:latest
           imagePullPolicy: IfNotPresent
           env:
             # Add environment variables here if needed
@@ -30,3 +30,4 @@ spec:
           ports:
             - containerPort: 9090
               name: metrics
+

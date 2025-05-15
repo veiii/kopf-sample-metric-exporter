@@ -12,13 +12,13 @@ tag:
 push: build tag
 	docker push $(REGISTRY)/$(IMAGE_NAME):$(TAG)
 
-all: build tag push
-
 minikube-load:
 	@echo "Loading image into Minikube..."
 	minikube image load $(IMAGE_NAME):$(TAG)
 
-minikube-deploy: minikube-load
+minikube-deploy:
+	kubectl apply -f manifest/crd.yaml
+	kubectl apply -f manifest/obj.yaml
 	kubectl apply -f manifest/serviceaccount.yaml
 	kubectl apply -f manifest/clusterrole.yaml
 	kubectl apply -f manifest/clusterrolebinding.yaml
@@ -31,3 +31,7 @@ minikube-clean:
 	kubectl delete -f manifest/clusterrolebinding.yaml --ignore-not-found
 	kubectl delete -f manifest/clusterrole.yaml --ignore-not-found
 	kubectl delete -f manifest/serviceaccount.yaml --ignore-not-found
+
+all: build tag push minikube-load minikube-deploy
+
+clean: minikube-clean
